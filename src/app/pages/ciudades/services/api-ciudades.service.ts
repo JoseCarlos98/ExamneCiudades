@@ -8,8 +8,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiCiudades {
 
-  apiKey = 'AIzaSyBqcgLkxHWsTedU6OVslI20Kh7mirh5UmU';
-  apiInfoCiudad = 'https://restcountries.com/v3.1'
+  apiKey = environment.API_KEY_GOOGLE_MAPS;
+  apiInfoCiudad = environment.API_CIUDADES;
+  apiTimeZone = environment.API_TIMEZONE;
 
   constructor(
     private http: HttpClient
@@ -30,9 +31,9 @@ export class ApiCiudades {
       Africa: 'Africa',
       Oceania: 'Australia'
     };
-    const zona = regionMap[region] || 'Etc';
+    const zona = regionMap[region];
     const capitalFormateada = capital.replace(' ', '_');
-    const url = `https://worldtimeapi.org/api/timezone/${zona}/${capitalFormateada}`;
+    const url = `${this.apiTimeZone}/${zona}/${capitalFormateada}`;
     return this.http.get(url);
   }
 }
