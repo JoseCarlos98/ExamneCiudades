@@ -1,0 +1,31 @@
+.c-detalle-ciudad {
+  width: 520px;
+  height: 350px;
+  padding: 5px 20px 20px 20px;
+
+  .header-modal {
+    position: relative;
+
+    h2 {
+      font-size: 15px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      img {
+        width: 50px;
+      }
+    }
+
+    span {
+      font-weight: 400;
+    }
+
+    span:nth-child(2) {
+      cursor: pointer;
+      position: absolute;
+      right: -10px;
+      top: -10px;
+    }
+  }
+}
