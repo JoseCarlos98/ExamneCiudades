@@ -3,27 +3,28 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit }
 import { MAT_DIALOG_DATA, MatDialogClose } from '@angular/material/dialog';
 import { ApiCiudades } from '../services/api-ciudades.service';
 import { Ciudad, InfoCiudad } from '../models/ciudades.model';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-detalle-ciudad',
   standalone: true,
-  imports: [CommonModule, MatDialogClose],
+  imports: [CommonModule, MatDialogClose, MatIcon],
   templateUrl: './detalle-ciudad.html',
   styleUrl: './detalle-ciudad.scss',
 })
 
 export class DetalleCiudad implements OnInit {
+  readonly data = inject(MAT_DIALOG_DATA);
 
-  data = inject(MAT_DIALOG_DATA);
   infoCiudad!: InfoCiudad;
   horaActual: string | null = null;
+
   constructor(
     private apiInfoCiudades: ApiCiudades,
     private cdr: ChangeDetectorRef
   ) { }
 
   ngOnInit(): void {
-    console.log(this.data);
     this.getInfoCiudad(this.data.ciudad);
   }
 

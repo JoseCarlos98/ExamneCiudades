@@ -13,16 +13,68 @@
   </div>
 
   <div class="detalle-contenido">
-    <div class="info">
-      <p><strong>País:</strong> {{ infoCiudad.name?.official }}</p>
-      <p><strong>Capital:</strong> {{ infoCiudad.capital[0] }}</p>
-      <p><strong>Región:</strong> {{ infoCiudad.region }} / {{ infoCiudad.subregion }}</p>
-      <p><strong>Población:</strong> {{ infoCiudad.population | number }}</p>
-      <p><strong>Idioma(s):</strong> {{ getIdiomas(infoCiudad.languages) }}</p>
-      <p><strong>Zona horaria:</strong> {{ infoCiudad.timezones[0] }}</p>
-      <p><strong>Continente:</strong> {{ infoCiudad.continents[0] }}</p>
-      <p><strong>Coordenadas capital:</strong> Lat {{ infoCiudad.capitalInfo.latlng[0] }}, Lon {{
-        infoCiudad.capitalInfo.latlng[1] }}</p>
+    <div class="info-card">
+      <div class="title">
+        <mat-icon>flag</mat-icon>
+        País:
+      </div>
+      {{ infoCiudad.name?.official }}
+    </div>
+
+    <div class="info-card">
+      <div class="title">
+        <mat-icon>pin_drop</mat-icon>
+        Capital:
+      </div>
+      {{ infoCiudad.capital[0] }}
+    </div>
+
+    <div class="info-card">
+      <div class="title">
+        <mat-icon>location_on</mat-icon>
+        Región:
+      </div>
+      {{ infoCiudad.region }} / {{ infoCiudad.subregion }}
+    </div>
+
+    <div class="info-card">
+      <div class="title">
+        <mat-icon>group</mat-icon>
+        Población:
+      </div>
+      {{ infoCiudad.population | number }}
+    </div>
+
+    <div class="info-card">
+      <div class="title">
+        <mat-icon>language</mat-icon>
+        Idioma(s):
+      </div>
+      {{ getIdiomas(infoCiudad.languages) }}
+    </div>
+
+    <div class="info-card">
+      <div class="title">
+        <mat-icon>schedule</mat-icon>
+        Zona horaria:
+      </div>
+      {{ infoCiudad.timezones[0] }}
+    </div>
+
+    <div class="info-card">
+      <div class="title">
+        <mat-icon>south_america</mat-icon>
+        Continente:
+      </div>
+      {{ infoCiudad.continents[0] }}
+    </div>
+
+    <div class="info-card">
+      <div class="title">
+        <mat-icon>map</mat-icon>
+        Coordenadas capital:
+      </div>
+      Lat {{ infoCiudad.capitalInfo.latlng[0] }}, Lon {{ infoCiudad.capitalInfo.latlng[1] }}
     </div>
   </div>
 </div>

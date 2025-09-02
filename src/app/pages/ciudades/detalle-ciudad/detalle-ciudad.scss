@@ -1,6 +1,4 @@
 .c-detalle-ciudad {
-  width: 520px;
-  height: 350px;
   padding: 5px 20px 20px 20px;
 
   .header-modal {
@@ -26,6 +24,40 @@
       position: absolute;
       right: -10px;
       top: -10px;
+    }
+  }
+
+  .detalle-contenido {
+    display: grid;
+    /* Mobile first */
+    grid-template-columns: 1fr;
+    gap: 15px;
+
+    .info-card {
+      border-radius: 10px;
+      background: #f1f1f1;
+      padding: 10px;
+
+      .title {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+    }
+  }
+
+  /* Tablet */
+  @media (min-width: 768px) {
+    .detalle-contenido {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .detalle-contenido {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }

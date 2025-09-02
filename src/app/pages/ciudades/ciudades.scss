@@ -1,21 +1,45 @@
 .c-ciudades {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 15px;
+  .c-mapa {
+    margin-top: 20px;
+    height: 600px;
+  }
 
-  > div {
-    border-radius: 10px;
-    background: #f1f1f1;
-    padding: 10px;
-    h4 {
-      margin: 0 0 10px 0;
+  .c-lista {
+    margin-top: 20px;
+    display: grid;
+    /* Mobile first */
+    grid-template-columns: 1fr;
+    gap: 15px;
+
+    > div {
+      border-radius: 10px;
+      background: #f1f1f1;
+      padding: 10px;
+
+      h4 {
+        margin: 0 0 10px 0;
+      }
+
+      span {
+        color: rgb(116, 160, 250);
+        font-size: 12px;
+        font-weight: 500;
+        cursor: pointer;
+      }
     }
+  }
 
-    span {
-      color: rgb(116, 160, 250);
-      font-size: 12px;
-      font-weight: 500;
-      cursor: pointer;
+  /* Tablet */
+  @media (min-width: 768px) {
+    .c-lista {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 1024px) {
+    .c-lista {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 }

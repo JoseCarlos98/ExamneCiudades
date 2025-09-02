@@ -1,6 +1,8 @@
 export interface Ciudad {
     nombre: string;
     clave: string;
+    lat: number;
+    lng: number;
 }
 
 export interface InfoCiudad {

@@ -1,8 +1,22 @@
-<div>
+<div class="c-ciudades">
+    <div class="c-mapa">
+        <google-map
+            height="100%"
+            width="100%"
+            [zoom]="2"
+        >
+            <map-marker
+                *ngFor="let ciudad of ciudades"
+                [position]="{ lat: ciudad.lat, lng: ciudad.lng }"
+                (mapClick)="verCiudad(ciudad)"
+            />
+        </google-map>
+    </div>
+
     <h3>Ciudades disponibles</h3>
-    <hr>
-    <div class="c-ciudades">
-        <div class="card-ciudad" *ngFor="let ciudad of ciudades">
+
+    <div class="c-lista">
+        <div class="card" *ngFor="let ciudad of ciudades">
             <h4>{{ciudad.nombre}}</h4>
             <span (click)="verCiudad(ciudad)">Ver más</span>
         </div>
